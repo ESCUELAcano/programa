@@ -1,0 +1,1 @@
+call inscribir_alumno (Nombregrupo,Curp_alumno);

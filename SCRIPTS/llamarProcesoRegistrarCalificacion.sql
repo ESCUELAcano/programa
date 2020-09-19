@@ -1,0 +1,1 @@
+call registrar_calificacion (CURP, Calificacion, Fecha);

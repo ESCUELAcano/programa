@@ -1,0 +1,1 @@
+call almacenar_alumno(Nombre,ApellidoP,ApellidoM, Direccion, CURP, Fechanacimiento, PadreTutor, DGrupo);

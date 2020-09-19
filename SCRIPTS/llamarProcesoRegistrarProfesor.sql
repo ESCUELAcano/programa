@@ -1,0 +1,1 @@
+call almacenar_profesor(Nombre, ApellidoP, ApellidoM, RFC, FechaNacimiento, Genero, CedulaProfesional, Telefono, Experiencia);

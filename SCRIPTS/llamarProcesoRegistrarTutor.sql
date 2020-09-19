@@ -1,0 +1,1 @@
+call almacenar_tutor (nombre, ApellidoP, ApellidoM,Credencial);
