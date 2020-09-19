@@ -21,9 +21,39 @@
     <ClCompile Include="generar_lista_mensual.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="registrar_calificacion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registrar_profesor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registrar_alumno.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registrar_tutor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inscribir_alumno.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="generar_lista_mensual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registrar_calificacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registrar_profesor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registrar_alumno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registrar_tutor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inscribir_alumno.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

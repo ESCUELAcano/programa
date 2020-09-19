@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-void generar_lista_mensual(string clave_alumno_lista, string mes_lista){
+struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string mes_lista){
     /*Nombre: GENERAR_LISTA_MENSUAL 
     FLUJOS DE ENTRADA: 
     FLUJO 01: conjunto_calificacion, TIPO Tabla_CALIFICACION
@@ -15,14 +15,15 @@ void generar_lista_mensual(string clave_alumno_lista, string mes_lista){
     FLUJOS DE SALIDA: 
     FLUJO 01: lista_cal_mensual TIPO: arreglo de cadena */
     /*CONSTANTES*/
-    const int max = 100;
+    
     /*VARIABLES*/
-    string rs[max][3];
+    struct listaCalMensual a;
     MYSQL* coneccion;
     ifstream archivoSQL{ "SCRIPTS/lista_calificacion.sql" };
     string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
     string::size_type pos;
     unsigned int num_filas;
+    unsigned int num_f = 0;
     const char* _lista;
     MYSQL_RES* res;
     MYSQL_ROW row;
@@ -51,14 +52,15 @@ void generar_lista_mensual(string clave_alumno_lista, string mes_lista){
     while ((row = mysql_fetch_row(res))) {
         for (int i = 0; i < num_filas; i++) {
             if (row[i] != NULL) {
-                cout << row[i] << endl;
+                a.rs[num_f][i] = row[i];
             }
         }
+        num_f = num_f + 1;
     }
     if (res != NULL)
         mysql_free_result(res);
 
     mysql_close(coneccion);
-
+    return a;
     /*TERMINA*/
 }

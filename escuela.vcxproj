@@ -149,9 +149,19 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="generar_lista_mensual.cpp" />
+    <ClCompile Include="registrar_alumno.cpp" />
+    <ClCompile Include="registrar_calificacion.cpp" />
+    <ClCompile Include="registrar_profesor.cpp" />
+    <ClCompile Include="registrar_tutor.cpp" />
+    <ClCompile Include="inscribir_alumno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="generar_lista_mensual.h" />
+    <ClInclude Include="inscribir_alumno.h" />
+    <ClInclude Include="registrar_alumno.h" />
+    <ClInclude Include="registrar_calificacion.h" />
+    <ClInclude Include="registrar_profesor.h" />
+    <ClInclude Include="registrar_tutor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
