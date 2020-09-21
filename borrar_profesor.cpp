@@ -7,7 +7,7 @@ using namespace std;
 void borrar_profesor(string clave_profe_borrar) {
 
 	MYSQL* coneccion;
-	ifstream archivoSQL{ "SCRIPTS/llamar_borrar_alumno.sql" };
+	ifstream archivoSQL{ "SCRIPTS/llamarBorrarProfesor.sql" };
 	string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
 	string::size_type pos;
 	const char* _alumno_borrar;

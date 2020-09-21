@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-void registrar_grupo(STRING nombre,STRING grado,STRING Turno,STRING Profesor) {
+void registrar_grupo(string nombre, string grado, string Turno, string Profesor) {
 /*Nombre: REGISTRAR_GRUPO
 FLUJO DE ENTRADA:
 FLUJO 08:generales_grupos
@@ -46,7 +46,7 @@ Flujo de salida:
 	//REMPLAZAR DProfesor
 	pos = ejecutarScript.find("DProfesor", 0);
 	if (pos < string::npos) {
-		ejecutarScript.replace(pos, string("DProfesor").length(), "\'" + DProfesor + "\'");
+		ejecutarScript.replace(pos, string("DProfesor").length(), "\'" + Profesor + "\'");
 	}
 	//TERMINA REMPLAZAR DProfesor
 	//REMPLAZAR DTuto
