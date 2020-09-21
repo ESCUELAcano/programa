@@ -1,0 +1,1 @@
+SELECT CURP, NOMBRE, ApellidoP, ApellidoM FROM ALUMNO WHERE DGrupo =claveGrupo;

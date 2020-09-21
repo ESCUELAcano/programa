@@ -1,23 +1,18 @@
-﻿#include "generar_lista_mensual.h"
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <fstream>
+#include "generar_lista_grupo.h"
 
 #include <iostream>
 using namespace std;
 
-struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string mes_lista){
-    /*Nombre: GENERAR_LISTA _PROFESORES 
-    FLUJO DE ENTRADA: 
-    Flujo de salida:  
-    Flujo 01: plantilla_profesores Tipo arreglo de cadena 
-    Registro_profesor */
-    /*CONSTANTES*/
+struct listaGrupo generar_lista_grupo(string clave_grupo){
     
+
     /*VARIABLES*/
-    struct listaCalMensual a;
+    struct listaGrupo a;
     MYSQL* coneccion;
-    ifstream archivoSQL{ "SCRIPTS/lista_calificacion.sql" };
+    ifstream archivoSQL{ "SCRIPTS/lista_grupo.sql" };
     string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
     string::size_type pos;
     unsigned int num_filas;
@@ -30,18 +25,12 @@ struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string m
     if (coneccion) {
         coneccion = mysql_real_connect(coneccion, "bj42twrs4vaqpd6iosvg-mysql.services.clever-cloud.com", "uw77bf6ikf5zyq1n", "q8apKjoZ8H2sR6PI2ZI2", "bj42twrs4vaqpd6iosvg", 3306, NULL, 0);
     }
-    //REMPLAZAR CURP
-    pos = ejecutarScript.find("CURP", 0);
+    //REMPLAZAR Clave grupo
+    pos = ejecutarScript.find("claveGrupo", 0);
     if (pos < string::npos) {
-        ejecutarScript.replace(pos, string("CURP").length(), "\'" + clave_alumno_lista + "\'");
+        ejecutarScript.replace(pos, string("claveGrupo").length(), "\'" + clave_grupo + "\'");
     }
-    //TERMINA REMPLAZAR CURP
-    //REMPLAZAR MES
-    pos = ejecutarScript.find("Mes", 0);
-    if (pos < string::npos) {
-        ejecutarScript.replace(pos, string("Mes").length(), "\'" + mes_lista + "\'");
-    }
-    //TERMINA REMPLAZAR MES
+    //TERMINA Clave grupo
     
     _lista = ejecutarScript.c_str();
     mysql_query(coneccion, _lista);

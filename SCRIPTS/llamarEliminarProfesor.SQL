@@ -1,0 +1,1 @@
+CALL ELIMINAR_PROFESOR (CedulaProfesor);

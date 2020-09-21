@@ -42,7 +42,7 @@ void registrar_alumno(string Nombre, string ApellidoP, string ApellidoM, string 
 	//REMPLAZAR DIRECCION
 	pos = ejecutarScript.find("Direccion", 0);
 	if (pos < string::npos) {
-		ejecutarScript.replace(pos, string("Direccion").length(), "\'" + ApellidoM + "\'");
+		ejecutarScript.replace(pos, string("Direccion").length(), "\'" + Direccion + "\'");
 	}
 	//TERMINA REMPLAZAR DIRECCION
 	//REMPLAZAR CURP
@@ -71,4 +71,5 @@ void registrar_alumno(string Nombre, string ApellidoP, string ApellidoM, string 
 	//TERMINA REMPLAZAR DGRUPO
 	_alumno = ejecutarScript.c_str();
 	mysql_query(coneccion, _alumno);
+	mysql_close(coneccion);
 }

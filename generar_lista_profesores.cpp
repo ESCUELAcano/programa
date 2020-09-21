@@ -1,4 +1,4 @@
-ï»¿#include "generar_lista_mensual.h"
+#include "generar_lista_profesores.h"
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <fstream>
@@ -6,18 +6,18 @@
 #include <iostream>
 using namespace std;
 
-struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string mes_lista){
-    /*Nombre: GENERAR_LISTA _PROFESORES 
-    FLUJO DE ENTRADA: 
-    Flujo de salida:  
-    Flujo 01: plantilla_profesores Tipo arreglo de cadena 
-    Registro_profesor */
-    /*CONSTANTES*/
-    
+struct listaProfesores generar_lista_profesores(){
+	/*Nombre: GENERAR_LISTA _PROFESORES 
+	FLUJO DE ENTRADA: 
+	FLUJO01 :conjunto_profesor TIPO:Registro de tabla PROFESOR 
+	Composición: Nombre: CADENA,apellidoP:CADENA,apellidoM:CADENA,Cedulaprofesional:ENTERO
+	Flujo de salida:  
+	Flujo 01: plantilla_profesores Tipo arreglo de cadena 
+	TIPO: Registro_profesor*/
     /*VARIABLES*/
-    struct listaCalMensual a;
+    struct listaProfesores a;
     MYSQL* coneccion;
-    ifstream archivoSQL{ "SCRIPTS/lista_calificacion.sql" };
+    ifstream archivoSQL{ "SCRIPTS/generar_lista_plantilla_profesores.sql" };
     string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
     string::size_type pos;
     unsigned int num_filas;
@@ -30,19 +30,6 @@ struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string m
     if (coneccion) {
         coneccion = mysql_real_connect(coneccion, "bj42twrs4vaqpd6iosvg-mysql.services.clever-cloud.com", "uw77bf6ikf5zyq1n", "q8apKjoZ8H2sR6PI2ZI2", "bj42twrs4vaqpd6iosvg", 3306, NULL, 0);
     }
-    //REMPLAZAR CURP
-    pos = ejecutarScript.find("CURP", 0);
-    if (pos < string::npos) {
-        ejecutarScript.replace(pos, string("CURP").length(), "\'" + clave_alumno_lista + "\'");
-    }
-    //TERMINA REMPLAZAR CURP
-    //REMPLAZAR MES
-    pos = ejecutarScript.find("Mes", 0);
-    if (pos < string::npos) {
-        ejecutarScript.replace(pos, string("Mes").length(), "\'" + mes_lista + "\'");
-    }
-    //TERMINA REMPLAZAR MES
-    
     _lista = ejecutarScript.c_str();
     mysql_query(coneccion, _lista);
     res = mysql_store_result(coneccion);
@@ -60,5 +47,4 @@ struct listaCalMensual generar_lista_mensual(string clave_alumno_lista, string m
 
     mysql_close(coneccion);
     return a;
-    /*TERMINA*/
 }

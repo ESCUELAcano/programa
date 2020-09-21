@@ -1,0 +1,1 @@
+CALL ConsultaAlumno (CURPAlumno);

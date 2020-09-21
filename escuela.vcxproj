@@ -147,6 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="actualizar_alumno.cpp" />
+    <ClCompile Include="borrar_alumno.cpp" />
+    <ClCompile Include="borrar_profesor.cpp" />
+    <ClCompile Include="generar_lista_grupo.cpp" />
+    <ClCompile Include="generar_lista_profesores.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="generar_lista_mensual.cpp" />
     <ClCompile Include="registrar_alumno.cpp" />
@@ -156,7 +161,12 @@
     <ClCompile Include="inscribir_alumno.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="actualizar_alumno.h" />
+    <ClInclude Include="borrar_alumno.h" />
+    <ClInclude Include="borrar_profesor.h" />
+    <ClInclude Include="generar_lista_grupo.h" />
     <ClInclude Include="generar_lista_mensual.h" />
+    <ClInclude Include="generar_lista_profesores.h" />
     <ClInclude Include="inscribir_alumno.h" />
     <ClInclude Include="registrar_alumno.h" />
     <ClInclude Include="registrar_calificacion.h" />

@@ -1,0 +1,1 @@
+call borrar_alumno (clave_borrar_alumno);

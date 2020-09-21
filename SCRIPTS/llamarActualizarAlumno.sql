@@ -1,0 +1,1 @@
+CALL actualizar_alumno (nombre01 , apellidoP01, apellidoM01 ,direccion01,curp01, fechaNacimiento01, padreTutor01 , DGrupo01);

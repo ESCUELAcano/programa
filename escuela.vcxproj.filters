@@ -36,6 +36,21 @@
     <ClCompile Include="inscribir_alumno.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="generar_lista_profesores.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generar_lista_grupo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="borrar_alumno.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actualizar_alumno.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="borrar_profesor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="generar_lista_mensual.h">
@@ -54,6 +69,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inscribir_alumno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generar_lista_profesores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generar_lista_grupo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="borrar_alumno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actualizar_alumno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="borrar_profesor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
