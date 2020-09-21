@@ -1,7 +1,7 @@
 #Archivo: SCRIPT06.SQL 
 /*Descripción: Sirve para realizar las inserciones una a una de los datos ejemplo del CIT de la entidad TUTOR en la tabla 
 TUTOR especificando el valor de cada uno de sus campos.*/
-USE ESCUELA;
+USE bj42twrs4vaqpd6iosvg;
 INSERT INTO TUTOR VALUES ('Jorge','CELIS','ROJO',1234567); 
 INSERT INTO TUTOR VALUES ('José','HERRERA','CALDERON',1234568); 
 INSERT INTO TUTOR VALUES ('Luis','HERNANDEZ','RODRIGUEZ',1234569); 

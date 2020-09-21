@@ -1,0 +1,1 @@
+CALL borrar_profesor (CedulaProfesor);

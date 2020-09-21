@@ -2,15 +2,16 @@
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <fstream>
+#include "borrar_profesor.h"
 using namespace std;
 
 void borrar_profesor(string clave_profe_borrar) {
 
 	MYSQL* coneccion;
-	ifstream archivoSQL{ "SCRIPTS/llamarBorrarProfesor.sql" };
+	ifstream archivoSQL{ "SCRIPTS/llamarEliminarProfesor.sql" };
 	string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
 	string::size_type pos;
-	const char* _alumno_borrar;
+	const char* _profesor_borrar;
 	//COMIENZA
 	coneccion = mysql_init(0);
 	if (coneccion) {
@@ -18,14 +19,14 @@ void borrar_profesor(string clave_profe_borrar) {
 	}
 
 	//REMPLAZAR Clave alumno borrar
-	pos = ejecutarScript.find("clave_borrar_alumno", 0);
+	pos = ejecutarScript.find("CedulaProfesor", 0);
 	if (pos < string::npos) {
-		ejecutarScript.replace(pos, string("clave_borrar_alumno").length(), "\'" + clave_alumno_borrar + "\'");
+		ejecutarScript.replace(pos, string("CedulaProfesor").length(), clave_profe_borrar);
 	}
 	//TERMINA REMPLAZAR Clave alumno borrar
 	
 	archivoSQL.close();
-	_alumno_borrar = ejecutarScript.c_str();
-	mysql_query(coneccion, _alumno_borrar);
+	_profesor_borrar = ejecutarScript.c_str();
+	mysql_query(coneccion, _profesor_borrar);
 	//TERMINA
 }
