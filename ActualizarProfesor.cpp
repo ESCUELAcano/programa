@@ -17,7 +17,7 @@ void Actualizar_profesor(string Nombre, string ApellidoP, string ApellidoM, stri
 	ifstream archivoSQL{ "SCRIPTS/llamarActualizarProfesor.sql" };
 	string ejecutarScript{ istreambuf_iterator<char>(archivoSQL), istreambuf_iterator<char>() };
 	string::size_type pos;
-	const char* _ActualizaProfesor;
+	const char* _profesor;
 	/*COMIENZA*/
 	coneccion = mysql_init(0);
 	if (coneccion) {
@@ -80,6 +80,6 @@ void Actualizar_profesor(string Nombre, string ApellidoP, string ApellidoM, stri
 	//TERMINA REMPLAZAR EXPERIENCIA
 	archivoSQL.close();
 	_profesor = ejecutarScript.c_str();
-	mysql_query(coneccion, _ActualizaProfesor);
+	mysql_query(coneccion, _profesor);
 	/*TERMINA*/
 }
